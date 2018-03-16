@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	
+<head>
+	<title>Admin</title>
+</head>
+
+<body>
+	<p>Your order has been successfully placed</p>
+	<div id="cartItems">
+	<h2>The items you have ordered</h2>
+	<div id="tableItems">
+		{% for row in products %}
+		<div>
+			<hr id="seperator">
+			<div id="itemName">
+				<span id="itemNameTag">{{row[1]}}</span><br>
+			</div>
+			<div id="itemPrice">
+				${{row[2]}}
+			</div>
+		</div>
+		{% endfor %}
+		<hr id="seperator">
+		<div id="total">
+			<span id="subtotal">Your total order size is</span> : ${{totalPrice}}
+			<span if="deliverydate"></span>
+		</div>
+		<div><a href="/">Return to Home Page</div>
+	</div>
+</div>
+</body>
+</html>
