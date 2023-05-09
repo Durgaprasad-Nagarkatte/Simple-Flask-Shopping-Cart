@@ -15,6 +15,9 @@ pipeline {
             }
         }
         stage('Uploading the image') {
+            when {
+                branch "Production"
+            }
             steps {
                 script {
                    docker.withRegistry( '', registryCredential ) {
